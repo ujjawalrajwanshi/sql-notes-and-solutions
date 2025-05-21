@@ -1,4 +1,4 @@
-# Query Quality Metrics
+# Query Quality And Percentage
 
 ## Table: `Queries`
 
@@ -16,18 +16,22 @@
 
 ## Problem
 
-For each `query_name`, compute:
+For each `query_name`, we compute:
 
-1. **Quality**:  
-   \[
-   \text{quality} = \frac{1}{N} \sum_{i=1}^{N} \frac{\text{rating}_i}{\text{position}_i}
-   \]  
-   where \(N\) is the total number of rows for that query.
+---
 
-2. **Poor query percentage**:  
-   \[
-   \text{poor\_query\_percentage} = 100 \times \frac{\text{count of rows with rating} < 3}{N}
-   \]
+
+quality 
+= 
+The average of the ratio between query rating and its position.
+
+---
+
+
+poor query percentage
+=
+The percentage of all queries with rating less than 3.
+
 
 - Round both **quality** and **poor_query_percentage** to **2 decimal places**.
 - Return one row per `query_name`, in any order.
